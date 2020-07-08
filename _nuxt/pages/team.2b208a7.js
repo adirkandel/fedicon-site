@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[10],{187:function(e,n,t){"use strict";t.r(n);var l=t(14),component=Object(l.a)({},(function(){var e=this.$createElement;return(this._self._c||e)("div",[this._v("Team Page")])}),[],!1,null,null,null);n.default=component.exports}}]);
