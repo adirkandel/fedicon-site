@@ -1,12 +1,17 @@
-const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+const deployConf = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
     router: {
         base: '/site/',
+    },
+    build: {
+        extend (config, { isDev }) {
+            if (!isDev && process.env.DEPLOY_ENV === 'GH_PAGES') {
+                config.output.publicPath = '/site/';
+            }
+        },
     },
 } : {};
 
 export default {
-    ...routerBase,
-
     /*
   ** Nuxt rendering mode
   ** See https://nuxtjs.org/api/configuration-mode
@@ -73,11 +78,7 @@ export default {
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/
   */
-    build: {
-        extend (config, { isDev }) {
-            if (!isDev && process.env.DEPLOY_ENV === 'GH_PAGES') {
-                config.output.publicPath = './site/';
-            }
-        },
-    },
+    build: {},
+
+    ...deployConf,
 };
