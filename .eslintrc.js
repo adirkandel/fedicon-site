@@ -4,22 +4,23 @@ module.exports = {
         browser: true,
         node: true,
     },
-    parserOptions: {
-        parser: 'babel-eslint',
-    },
     extends: [
-        'eslint:recommended',
-        // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
-        // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
-        'plugin:vue/recommended',
+        '@nuxtjs/eslint-config-typescript',
+        'plugin:nuxt/recommended',
     ],
-    // required to lint *.vue files
     plugins: ['vue'],
     // add your custom rules here
     rules: {
-        indent: [2, 4],
-        semi: [2, 'never'],
+        indent: ['error', 4],
+        semi: ['error', 'always', { omitLastInOneLineBlock: true }],
+        quotes: ['error', 'single'],
+        'prefer-template': 'error',
         'no-console': 'off',
+        'comma-dangle': ['error', 'always-multiline'],
+        'vue/html-indent': ['warn', 4],
+        'vue/html-self-closing': 'off',
+        'vue/singleline-html-element-content-newline': 'off',
+        'vue/multiline-html-element-content-newline': 'off',
         'vue/max-attributes-per-line': 'off',
     },
 };

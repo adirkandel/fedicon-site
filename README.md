@@ -1,4 +1,4 @@
-# Fedicon
+# fedicon
 
 ## Build Setup
 
