@@ -1,21 +1,18 @@
 <template>
-    <div class="container font-sans text-black">
-        <div class="flex justify-between items-center">
-            <h1>
-                <nuxt-link to="/">
-                    My blog
-                </nuxt-link>
-            </h1>
-            <div class="flex">
-                <div>
-                    <nuxt-link to="/about">About</nuxt-link>
-                    <nuxt-link to="/team">Team</nuxt-link>
-                </div>
-            </div>
-        </div>
-        <Nuxt />
+    <div class="flex flex-col min-h-screen">
+        <TopBar/>
+        <Nuxt/>
+        <Footer class="mt-auto"/>
     </div>
 </template>
+
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({
+})
+</script>
+
 
 <style>
 </style>
